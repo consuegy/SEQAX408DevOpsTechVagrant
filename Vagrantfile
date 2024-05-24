@@ -43,14 +43,14 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+   config.vm.synced_folder "../hello_http/", "/hello_http"
 
   # Disable the default share of the current code directory. Doing this
   # provides improved isolation between the vagrant box and your host
   # by making sure your Vagrantfile isn't accessible to the vagrant box.
   # If you use this you may want to enable additional shared subfolders as
   # shown above.
-  # config.vm.synced_folder ".", "/vagrant", disabled: true
+   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -70,9 +70,8 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
-   config.vm.provision :shell, path: "bootstrap.sh"
+   config.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+     sudo apt install -y gcc
+   SHELL
 end
