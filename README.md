@@ -1,7 +1,7 @@
 # SEQAX408DevOpsTechVagrant
 
-Placeholder instructions:
-- Git clone the repo
+## Getting started
+- Clone the repo HelloHttp repo: `https://github.com/drines-uc/hello_http`
 - CD into the repo
 - run `vagrant up` to execute
 - `vagrant ssh`
